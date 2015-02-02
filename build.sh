@@ -6,6 +6,7 @@ module load python
 module add gcc/4.8.2
 module add fftw/3.3.4
 module add lapack
+module add numpy
 
 echo $LD_LIBRARY_PATH
 echo $LAPACK_DIR
