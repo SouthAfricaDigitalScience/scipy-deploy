@@ -2,10 +2,10 @@
 SOURCE_FILE=$NAME-$VERSION.tar.gz
 
 module load ci
-module load python
-module add gcc/4.8.2
+module add python/2.7.9
+module add gcc/4.8.4
 module add fftw/3.3.4
-module add lapack
+module add atlas
 module add numpy
 
 echo $LD_LIBRARY_PATH
@@ -15,10 +15,10 @@ ls $FFTW_DIR/lib
 ls $LAPACK_DIR/lib
 
 # according to: http://www.scipy.org/scipylib/building/linux.html
-export LAPACK="$LAPACK_DIR/lib/liblapack.so"
-export BLAS="$LAPACK_DIR/lib/libblas.so"
-export FFTW3="$FFTW_DIR/lib/libfftw3.so"
-
+export BLAS="${BLAS_DIR}/lib/libblas.so"
+export LAPACK="${LAPACK_DIR}/lib/liblapack.so"
+export ATLAS="${ATLAS_DIR}libatlas.so"
+export FFTW
 
 echo "REPO_DIR is "
 echo $REPO_DIR
